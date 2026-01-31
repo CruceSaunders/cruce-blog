@@ -14,11 +14,22 @@ export default function Newsletter({ variant = "card" }: NewsletterProps) {
     e.preventDefault();
     setStatus("loading");
     
-    // Simulate API call - replace with actual newsletter service
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-    }, 1000);
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (response.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   if (variant === "full") {

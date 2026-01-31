@@ -31,19 +31,24 @@ export default function NewsletterPopup() {
     e.preventDefault();
     setStatus("loading");
 
-    // TODO: Replace with actual newsletter service integration
-    // This is a placeholder that simulates the subscription
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
       
-      setStatus("success");
-      localStorage.setItem("newsletterSubscribed", "true");
-      
-      // Close popup after success
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 2000);
+      if (response.ok) {
+        setStatus("success");
+        localStorage.setItem("newsletterSubscribed", "true");
+        
+        // Close popup after success
+        setTimeout(() => {
+          setIsOpen(false);
+        }, 2000);
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
