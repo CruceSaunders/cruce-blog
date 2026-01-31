@@ -2,23 +2,29 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#E5E7EB] bg-white">
+    <footer className="border-t border-[#E5E7EB] dark:border-[#374151] bg-white dark:bg-[#1F2937]">
       <div className="max-w-5xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Left - Copyright */}
-          <p className="text-[#6B7280] text-sm">
+          <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm">
             © {new Date().getFullYear()} Cruce Saunders. All rights reserved.
           </p>
 
           {/* Center - Links */}
           <div className="flex items-center gap-6">
-            <Link href="/blog" className="text-[#6B7280] hover:text-[#111827] text-sm transition-colors">
+            <Link href="/blog" className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white text-sm transition-colors">
               Blog
             </Link>
-            <Link href="/about" className="text-[#6B7280] hover:text-[#111827] text-sm transition-colors">
+            <Link href="/ippo" className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white text-sm transition-colors">
+              Ippo
+            </Link>
+            <Link href="/now" className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white text-sm transition-colors">
+              Now
+            </Link>
+            <Link href="/about" className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white text-sm transition-colors">
               About
             </Link>
-            <Link href="/newsletter" className="text-[#6B7280] hover:text-[#111827] text-sm transition-colors">
+            <Link href="/newsletter" className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white text-sm transition-colors">
               Newsletter
             </Link>
           </div>
@@ -29,7 +35,7 @@ export default function Footer() {
               href="https://twitter.com/crucesaunders" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#6B7280] hover:text-[#111827] transition-colors"
+              className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white transition-colors"
               aria-label="Twitter"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -40,7 +46,7 @@ export default function Footer() {
               href="https://tiktok.com/@crucesaunders" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#6B7280] hover:text-[#111827] transition-colors"
+              className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white transition-colors"
               aria-label="TikTok"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +57,7 @@ export default function Footer() {
               href="https://github.com/crucesaunders" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#6B7280] hover:text-[#111827] transition-colors"
+              className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
